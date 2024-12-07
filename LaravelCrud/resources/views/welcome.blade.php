@@ -20,7 +20,7 @@
     <div class="container mx-auto px-4">
         <!-- Header Section -->
         <div class="flex justify-between items-center py-4">
-            <h1 class="text-red-500 text-xl font-bold">Hello Laravel</h1>
+            <h1 class="text-red-500 text-xl font-bold">Home</h1>
             <a href="/create"
                 class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:ring focus:ring-green-300">
                 Add New Post
@@ -35,8 +35,73 @@
             </div>
         @endif
 
+        <!-- Posts Table -->
+        <div class="mt-6">
+            <div class="flex flex-col">
+                <div class="-m-1.5 overflow-x-auto">
+                    <div class="p-1.5 min-w-full inline-block align-middle">
+                        <div class="overflow-hidden border border-gray-300 rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">
+                                            Id
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">
+                                            Name
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">
+                                            Description
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">
+                                            Image
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    @foreach ($posts as $post)
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                                {{ $post->id }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                                                {{ $post->name }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                                                {{ $post->description }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 text-end">
+                                                <img src="{{ $post->image }}" alt="Post Image" class="w-16 h-16 rounded">
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                                <button type="button"
+                                                    class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 focus:outline-none focus:text-red-800 disabled:opacity-50 disabled:pointer-events-none">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            @if ($posts->isEmpty())
+                                <div class="p-6 text-center text-gray-500">No posts available.</div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
 
 
 </html>
