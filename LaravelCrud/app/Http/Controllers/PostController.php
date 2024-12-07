@@ -23,5 +23,7 @@ class PostController extends Controller
          
               // Save the Post model
               $post->save();
+
+              return redirect()->route('home')->with('success', 'Post created successfully.');
     }
 }

@@ -17,14 +17,26 @@
 </head>
 
 <body class="bg-gray-50">
-    <div class="container">
+    <div class="container mx-auto px-4">
+        <!-- Header Section -->
         <div class="flex justify-between items-center py-4">
             <h1 class="text-red-500 text-xl font-bold">Hello Laravel</h1>
-            <a href="/create" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:ring focus:ring-green-300">
+            <a href="/create"
+                class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:ring focus:ring-green-300">
                 Add New Post
             </a>
         </div>
+
+        <!-- Success Message -->
+        @if (session('success'))
+            <div
+                class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4 max-w-md mx-auto">
+                <span>{{ session('success') }}</span>
+            </div>
+        @endif
+
     </div>
 </body>
+
 
 </html>
