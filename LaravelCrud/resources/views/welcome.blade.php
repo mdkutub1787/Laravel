@@ -61,7 +61,7 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ $post->name }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ $post->description }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 text-end">
-                                                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" class="w-16 h-16 rounded">
+                                                <img src="{{ asset('storage/' . $post->image) }}, class="w-16 h-16 rounded">
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                                 <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 focus:outline-none focus:text-red-800 disabled:opacity-50 disabled:pointer-events-none">
