@@ -18,9 +18,11 @@
 
 <body class="bg-gray-50">
     <div class="container">
-        <div class="flex justify-between">
-            <h1 class="text-red-500">Hello Laravel</h1>
-            <a href="/create">Add New Post</a>
+        <div class="flex justify-between items-center py-4">
+            <h1 class="text-red-500 text-xl font-bold">Hello Laravel</h1>
+            <a href="/create" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:ring focus:ring-green-300">
+                Add New Post
+            </a>
         </div>
     </div>
 </body>
