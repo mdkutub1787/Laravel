@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-  public function create(){
-    return'Hello Post';
-  }
+    public function create()
+    {
+        return view("create");
+    }
+    public function ourfilestore(Request $request)
+    {
+        return $request->all();
+    }
 }

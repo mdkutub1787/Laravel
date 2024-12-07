@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/create', [PostController::class, 'create']);
+
+Route::post('/store', [PostController::class, 'ourfilestore'])->name('store');
